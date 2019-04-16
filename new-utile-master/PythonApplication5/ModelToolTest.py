@@ -1,11 +1,12 @@
 from keras.applications import vgg16
+from keras.applications import imagenet_utils
 from keras import models
 from keras import layers
 import keras.backend as K
 import tensorflow as tf
 import numpy as np
 from matplotlib import pyplot as plt
-
+from keras.applications import resnet50
 
 
 import ModelTool as t
@@ -23,7 +24,7 @@ def test():
     
 
     K.clear_session() # get a new session
-    model=vgg16.VGG16(include_top=True,weights='imagenet',input_shape=(224,224,3))
+    model=resnet50.ResNet50(include_top=True,weights='imagenet',input_shape=(224, 224, 3))
 
     for layer in model.layers:
         layer.trainable=False
@@ -35,7 +36,7 @@ def test():
     datagenerater=generater.get_train_data()
     
 
-    object=INOC.read_json('E:/github/imagenet_1000_labels.json')
+    #object=INOC.read_json('E:/github/imagenet_1000_labels.json')
 
     keep_run=True
     while keep_run:
@@ -47,17 +48,13 @@ def test():
         plt.show()
         image=np.reshape(image,(1,224,224,3))
         activations = model.predict(image) 
+        print(resnet50.decode_predictions(activations))
        
       
     
-        i=0
-        for b in activations[0]:
-
-            if b>0.5:
-                print(b)
-                
-                print(object[i])
-            i+=1
+       
+     
+    #    print(imagenet_utils.decode_predictions(activations))
 
        
        

@@ -26,20 +26,24 @@ def get_datalist(path):
     return file_list  
 
 
-def resize_padding(image,size,padding=True):
+def resize_padding(image,size,padding=True,strech=False):
     '''
     input(image,size=(**,**))
     resize image without change the aspect ratio of image
 
     '''
-    iw,ih=image.size
-    w,h=size
-    scale=min(w/iw,h/ih)
-    nw=int(iw*scale)
-    nh=int(ih*scale)
-    image=image.resize((nw,nh),Image.BICUBIC)
-    backGround=Image.new('RGB',size,(128,128,128))
-    backGround.paste(image,((w-nw)//2,(h-nh)//2))
+    if strech:
+        backGround=image.resize(size)
+    else:
+        iw,ih=image.size
+        w,h=size
+        scale=min(w/iw,h/ih)
+        nw=int(iw*scale)
+        nh=int(ih*scale)
+        image=image.resize((nw,nh),Image.BICUBIC)
+        backGround=Image.new('RGB',size,(0,0,0))
+        backGround.paste(image,((w-nw)//2,(h-nh)//2))
+    
     return backGround
 
 
@@ -153,7 +157,7 @@ class datagenerater:
                     
                     
                 image=read_image(self.file_path+data_list[index]) ##读图
-                image=resize_padding(image,self.image_size)       ##填充
+                image=resize_padding(image,self.image_size,strech=True)       ##填充
                 image=np.array(image)
                 image_batch.append(image)
 

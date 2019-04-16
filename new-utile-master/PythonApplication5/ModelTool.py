@@ -31,7 +31,7 @@ def feature_map(model,image,layers_slice,images_per_row = 16):
     model: input a model
     image: input a image by normalization
     layers_slice:input a list [star,end],if(end==0) end len(layers)-1
-
+    if result  dimension is not bigger than 3,while be array,and save in feature_map.txt
     '''
    
 

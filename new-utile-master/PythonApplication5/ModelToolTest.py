@@ -10,6 +10,7 @@ from matplotlib import pyplot as plt
 
 import ModelTool as t
 import utile as lwj
+import ImageNetObjectClass as INOC
 
 
 '''
@@ -33,18 +34,34 @@ def test():
     generater=lwj.datagenerater("E:/VOC2012/JPEGImages/","E:/VOC2012/Annotations/",batch_size=1,image_size=(224,224))
     datagenerater=generater.get_train_data()
     
+
+    object=INOC.read_json('E:/github/imagenet_1000_labels.json')
+
     keep_run=True
     while keep_run:
         image,label=next(datagenerater)
+        
+        image=image
         tt=np.reshape(image,(224,224,3))
         plt.imshow(tt)
         plt.show()
-        image=image/255
-        t.feature_map(model,image,[-1,0])
-        a=input('input:')
-        if a=='l':
-            keep_run=False
+        image=np.reshape(image,(1,224,224,3))
+        activations = model.predict(image) 
+       
+      
+    
+        i=0
+        for b in activations[0]:
 
+            if b>0.5:
+                print(b)
+                
+                print(object[i])
+            i+=1
+
+       
+       
+        
     
    
   

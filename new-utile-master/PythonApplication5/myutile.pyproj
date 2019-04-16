@@ -20,6 +20,9 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ImageNetObjectClass.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="model.py" />
     <Compile Include="ModelTool.py" />
     <Compile Include="ModelToolTest.py">

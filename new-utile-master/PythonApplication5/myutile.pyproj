@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{f7a657a2-4edd-4f3f-b53a-1dee2e8a41b7}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>model.py</StartupFile>
+    <StartupFile>ModelToolTest.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

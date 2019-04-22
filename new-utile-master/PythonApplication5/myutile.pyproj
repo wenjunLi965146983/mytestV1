@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{f7a657a2-4edd-4f3f-b53a-1dee2e8a41b7}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>ModelToolTest.py</StartupFile>
+    <StartupFile>test.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -20,17 +20,76 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ImageNetObjectClass.py">
+    <Compile Include="lwjyolo\coco_annotation.py" />
+    <Compile Include="lwjyolo\convert.py" />
+    <Compile Include="lwjyolo\kmeans.py" />
+    <Compile Include="lwjyolo\mytest.py" />
+    <Compile Include="lwjyolo\train.py" />
+    <Compile Include="lwjyolo\train_bottleneck.py" />
+    <Compile Include="lwjyolo\ttt.py" />
+    <Compile Include="lwjyolo\voc_annotation.py" />
+    <Compile Include="lwjyolo\yolo.py" />
+    <Compile Include="lwjyolo\yolo3\model.py" />
+    <Compile Include="lwjyolo\yolo3\utils.py" />
+    <Compile Include="lwjyolo\yolo3\__init__.py" />
+    <Compile Include="lwjyolo\yolo_video.py" />
+    <Compile Include="lwjyolo\__init__.py" />
+    <Compile Include="mytest\imagetool.py" />
+    <Compile Include="mytest\voc2yolo.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="model.py" />
-    <Compile Include="ModelTool.py" />
-    <Compile Include="ModelToolTest.py">
+    <Compile Include="mytest\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="train.py" />
-    <Compile Include="utile.py" />
-    <Compile Include="utileTest.py" />
+    <Compile Include="test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mytest\ImageNetObjectClass.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mytest\model.py" />
+    <Compile Include="mytest\ModelTool.py" />
+    <Compile Include="mytest\ModelToolTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mytest\train.py" />
+    <Compile Include="mytest\utile.py" />
+    <Compile Include="mytest\utileTest.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lwjyolo\" />
+    <Folder Include="lwjyolo\.vs\" />
+    <Folder Include="lwjyolo\.vs\keras-yolo3-master\" />
+    <Folder Include="lwjyolo\.vs\keras-yolo3-master\v15\" />
+    <Folder Include="lwjyolo\font\" />
+    <Folder Include="lwjyolo\model_data\" />
+    <Folder Include="lwjyolo\yolo3\" />
+    <Folder Include="lwjyolo\yolo3\__pycache__\" />
+    <Folder Include="lwjyolo\__pycache__\" />
+    <Folder Include="mytest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lwjyolo\.gitignore" />
+    <Content Include="lwjyolo\.vs\keras-yolo3-master\v15\.suo" />
+    <Content Include="lwjyolo\.vs\ProjectSettings.json" />
+    <Content Include="lwjyolo\.vs\slnx.sqlite" />
+    <Content Include="lwjyolo\.vs\VSWorkspaceState.json" />
+    <Content Include="lwjyolo\darknet53.cfg" />
+    <Content Include="lwjyolo\font\FiraMono-Medium.otf" />
+    <Content Include="lwjyolo\font\SIL Open Font License.txt" />
+    <Content Include="lwjyolo\LICENSE" />
+    <Content Include="lwjyolo\model_data\coco_classes.txt" />
+    <Content Include="lwjyolo\model_data\lemon_or_orange.txt" />
+    <Content Include="lwjyolo\model_data\tiny_yolo_anchors.txt" />
+    <Content Include="lwjyolo\model_data\voc_classes.txt" />
+    <Content Include="lwjyolo\model_data\yolo_anchors.txt" />
+    <Content Include="lwjyolo\README.md" />
+    <Content Include="lwjyolo\yolo3\__pycache__\model.cpython-36.pyc" />
+    <Content Include="lwjyolo\yolo3\__pycache__\utils.cpython-36.pyc" />
+    <Content Include="lwjyolo\yolo3\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="lwjyolo\yolov3-tiny.cfg" />
+    <Content Include="lwjyolo\yolov3.cfg" />
+    <Content Include="lwjyolo\__pycache__\yolo.cpython-36.pyc" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

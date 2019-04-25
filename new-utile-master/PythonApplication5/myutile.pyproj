@@ -47,7 +47,7 @@
     <Compile Include="mytest\ImageNetObjectClass.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="mytest\model.py" />
+    <Compile Include="mytest\yolo_model.py" />
     <Compile Include="mytest\ModelTool.py" />
     <Compile Include="mytest\ModelToolTest.py">
       <SubType>Code</SubType>
@@ -90,6 +90,7 @@
     <Content Include="lwjyolo\yolov3-tiny.cfg" />
     <Content Include="lwjyolo\yolov3.cfg" />
     <Content Include="lwjyolo\__pycache__\yolo.cpython-36.pyc" />
+    <Content Include="mytest\yolo_anchors.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
